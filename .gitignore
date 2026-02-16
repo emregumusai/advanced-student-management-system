@@ -1,0 +1,36 @@
+# SQL Server
+*.mdf
+*.ldf
+*.ndf
+*.bak
+*.trn
+
+# PowerShell
+*.ps1xml
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+~$*
+
+# Database connection files
+*.udl
+
+# SQL Server Management Studio
+*.sql~
+
+# Backup files
+*_backup_*
+*.old

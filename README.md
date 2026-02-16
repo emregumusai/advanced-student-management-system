@@ -1,243 +1,457 @@
-# BMÜ329 Veri Tabanı Sistemleri Dersi Dönem Projesi Gereksinimleri ve E-R Diyagramı
+﻿# 🎓 Advanced Student Management System
 
-## Proje Başlığı: Gelişmiş ve Yenilikçi Öğrenci Bilgi Sistemi (OBS)
+<div align="center">
 
-**Proje Ekibindeki Kişiler:**
-- **220260028** - Yunus Emre Gümüş
-- **220260018** - Alperen Aktaş
-- **220260006** - Mehmet Miraç Özmen
+![SQL Server](https://img.shields.io/badge/SQL%20Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)
+
+**Enterprise-grade database system with Role-Based Access Control, bilingual documentation, and professional SQL design patterns.**
+
+[Features](#-features) • [Quick Start](#-quick-start) • [Architecture](#-architecture) • [Documentation](#-documentation)
+
+</div>
 
 ---
 
-## 📋 Professional Code Revision (Profesyonel Kod Revizyonu)
+## 🌟 Overview
 
-**Last Updated / Son Güncelleme:** February 16, 2026
+A comprehensive Student Information System (SIS) built with SQL Server, featuring advanced database design patterns, transaction management, and enterprise-level security implementations. This system demonstrates professional-grade SQL development with bilingual documentation for international teams.
 
-This project has been professionally revised with international coding standards, bilingual documentation, and improved maintainability.
+### 🎯 Key Highlights
 
-Bu proje uluslararası kodlama standartları, iki dilli dokümantasyon ve geliştirilmiş bakım kolaylığı ile profesyonel olarak revize edilmiştir.
+- **🔐 Role-Based Access Control (RBAC)** - Three-tier security model (Student, Teacher, Admin)
+- **🌍 Bilingual Documentation** - Complete English/Turkish inline comments
+- **💾 Transaction Safety** - ACID-compliant with comprehensive error handling
+- **🔄 Idempotent Scripts** - Safe re-execution without data corruption
+- **📊 Rich Sample Data** - 400+ students, 210+ teachers, realistic relationships
+- **🛡️ Security Best Practices** - Password policies, parameterized queries, audit logging
+- **⚡ Automated Deployment** - One-command PowerShell setup scripts
 
-### ✨ Key Improvements / Temel İyileştirmeler
+---
 
-#### 1. **File Organization / Dosya Organizasyonu**
-SQL files have been renamed with English names and numeric prefixes for better portability across systems:
+## ✨ Features
 
-SQL dosyaları sistemler arası daha iyi taşınabilirlik için İngilizce adlar ve sayısal öneklerle yeniden adlandırıldı:
+### Core Functionality
 
-| Old Name / Eski Ad | New Name / Yeni Ad | Purpose / Amaç |
-|-------------------|-------------------|---------------|
-| `1. Tabloları_Oluştur.sql` | `01_CreateTables.sql` | Creates all database tables / Tüm veritabanı tablolarını oluşturur |
-| `2. Verileri_Yaz.sql` | `02_InsertData.sql` | Inserts sample data / Örnek veri ekler |
-| `3. Kısıtlar_Yetkilendirmeler.sql` | `03_SecurityPermissions.sql` | Sets up roles and permissions / Rol ve izinleri ayarlar |
-| `4. Saklı_Yordam.sql` | `04_StoredProcedures.sql` | Creates stored procedures / Saklı yordamlar oluşturur |
-| `5. Tetikleyici.sql` | `05_Triggers.sql` | Creates audit triggers / Denetim tetikleyicileri oluşturur |
-| `6.transaction.sql` | `06_TransactionExample.sql` | Demonstrates transactions / İşlem yönetimini gösterir |
+| Feature | Description |
+|---------|-------------|
+| **Student Management** | Comprehensive student records with department assignments and advisor relationships |
+| **Course Management** | Complex course structures with teacher assignments and scheduling |
+| **Attendance Tracking** | Detailed attendance records with multiple status types (Present, Absent, Late, Excused) |
+| **Grade Management** | Exam creation, grading system with validation (0-100 range) |
+| **Audit Logging** | Automatic trigger-based audit trail for critical operations |
+| **User Authentication** | SQL Server authentication with role-based permissions |
 
-#### 2. **Bilingual Documentation / İki Dilli Dokümantasyon**
-All SQL files now include comprehensive bilingual documentation (English + Turkish):
+### Technical Features
 
-Tüm SQL dosyaları artık kapsamlı iki dilli dokümantasyon içeriyor (İngilizce + Türkçe):
+- ✅ **PascalCase Naming Convention** - Consistent, professional database object naming
+- ✅ **Named Constraints** - All FK/PK constraints explicitly named for maintainability
+- ✅ **Schema Qualification** - Full `dbo.` prefixes throughout
+- ✅ **Stored Procedures** - Parameterized operations with return codes
+- ✅ **Triggers** - AFTER DELETE triggers for audit trails
+- ✅ **Transaction Management** - TRY/CATCH blocks with automatic rollback
+- ✅ **Data Validation** - Check constraints and business rule enforcement
 
-- ✅ Professional file headers with metadata / Meta veri ile profesyonel dosya başlıkları
-- ✅ Inline comments explaining logic / Mantığı açıklayan satır içi yorumlar
-- ✅ Parameter and return value documentation / Parametre ve dönüş değeri dokümantasyonu
-- ✅ Usage examples / Kullanım örnekleri
-- ✅ Error handling documentation / Hata yönetimi dokümantasyonu
+---
 
-#### 3. **Naming Convention Fix / İsimlendirme Kuralı Düzeltmesi**
-- ✅ **Fixed critical inconsistency**: `Admins` table now uses `Name` and `Surname` (PascalCase) instead of lowercase `name`, `surname`
-- ✅ **Kritik tutarsızlık düzeltildi**: `Admins` tablosu artık küçük harf `name`, `surname` yerine `Name` ve `Surname` (PascalCase) kullanıyor
-- ✅ All database objects follow consistent PascalCase naming / Tüm veritabanı nesneleri tutarlı PascalCase isimlendirme izliyor
+## 🏗️ Architecture
 
-#### 4. **Security Improvements / Güvenlik İyileştirmeleri**
-- ✅ Hardcoded passwords replaced with `[SECURE_PASSWORD_HERE]` placeholders
-- ✅ Sabit kodlanmış şifreler `[SECURE_PASSWORD_HERE]` yer tutucuları ile değiştirildi
-- ✅ Security warnings and password policy documentation added
-- ✅ Güvenlik uyarıları ve şifre politikası dokümantasyonu eklendi
-- ✅ Production-ready security recommendations included
-- ✅ Üretim ortamına hazır güvenlik önerileri dahil edildi
+### Database Schema
 
-#### 5. **Error Handling & Transactions / Hata Yönetimi ve İşlemler**
-- ✅ All data insertion wrapped in transactions with TRY/CATCH blocks
-- ✅ Tüm veri eklemeleri TRY/CATCH blokları ile işlemler içine alındı
-- ✅ Automatic rollback on errors / Hatalarda otomatik geri alma
-- ✅ Comprehensive error logging / Kapsamlı hata günlüğü
-- ✅ Proper return codes in stored procedures / Saklı yordamlarda uygun dönüş kodları
+**17 Core Tables** organized into logical groups:
 
-#### 6. **Idempotency / Tekrar Çalıştırılabilirlik**
-All scripts can now be safely re-run without errors:
+#### 📚 Core Entities
+- **Students** - Student records with departmental affiliations
+- **Teachers** - Faculty records with department assignments
+- **Departments** - Academic department hierarchy
+- **Courses** - Course catalog with credits and prerequisites
 
-Tüm betikler artık hatasız olarak güvenle yeniden çalıştırılabilir:
+#### 🔗 Relationship Tables
+- **StudentCourses** - Many-to-many student enrollment
+- **TeacherCourses** - Course-instructor assignments
+- **DepartmentCourses** - Department-course relationships
 
-- ✅ `DROP TABLE IF EXISTS` statements / İfadeleri
-- ✅ `DROP TRIGGER/PROCEDURE IF EXISTS` statements / İfadeleri
-- ✅ `CREATE OR ALTER` for procedures / Yordamlar için
-- ✅ Safe idempotent operations / Güvenli tekrar çalıştırılabilir işlemler
+#### 📊 Activity Tables
+- **Attendances** - Daily attendance records
+- **Exams** - Examination schedules and types
+- **Grades** - Student exam results
+- **Timetables** - Weekly course schedules
 
-#### 7. **Code Quality / Kod Kalitesi**
-- ✅ Schema qualification (`dbo.`) on all objects / Tüm nesnelerde şema nitelemesi
-- ✅ Named constraints for better maintainability / Daha iyi bakım için isimlendirilmiş kısıtlar
-- ✅ Clear section organization with headers / Başlıklar ile net bölüm organizasyonu
-- ✅ Professional commenting standards / Profesyonel yorum standartları
-- ✅ Consistent formatting and indentation / Tutarlı biçimlendirme ve girintileme
+#### 🔐 System Tables
+- **Roles** - User role definitions
+- **RolePermissions** - Permission mappings
+- **Admins** - System administrator accounts
+- **Logs** - Audit trail records
 
-### 🚀 Quick Start / Hızlı Başlangıç
+### Entity Relationship Diagram
 
-**Automated Setup / Otomatik Kurulum:**
+```
+Students ──< StudentCourses >── Courses ──< TeacherCourses >── Teachers
+    │                              │                               │
+    │                              │                               │
+    └─── Departments ──────────────┴───────────────────────────────┘
+    │                              │
+    │                              │
+    └─── Attendances               └─── Exams ──< Grades
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- **SQL Server 2019+** (Express/Developer/Enterprise)
+- **PowerShell 5.1+**
+- **Windows Authentication** or SQL Server authentication
+
+### Installation
+
+#### Option 1: Automated Setup (Recommended)
+
 ```powershell
+# Clone the repository
+git clone https://github.com/yourusername/advanced-student-management-system.git
+cd advanced-student-management-system
+
+# Run automated setup
 .\run_sql_scripts.ps1
 ```
 
-**Manual Execution / Manuel Çalıştırma:**
-1. `01_CreateTables.sql` - Create database schema / Veritabanı şemasını oluştur
-2. `02_InsertData.sql` - Insert sample data / Örnek veri ekle
-3. `03_SecurityPermissions.sql` - Configure security (update passwords first!) / Güvenliği yapılandır (önce şifreleri güncelleyin!)
-4. `04_StoredProcedures.sql` - Create stored procedures / Saklı yordamlar oluştur
-5. `05_Triggers.sql` - Create triggers / Tetikleyiciler oluştur
-6. `06_TransactionExample.sql` - (Optional) Test transactions / (İsteğe bağlı) İşlemleri test et
+#### Option 2: Manual Setup
 
-### 📊 Data Statistics / Veri İstatistikleri
-- 30 Academic Departments / Akademik Bölüm
-- 210 Teachers / Öğretmen
-- 401 Students / Öğrenci
-- 238 Courses / Ders
-- 50 Exams / Sınav
-- Plus relationship mappings / Artı ilişki eşlemeleri
+```powershell
+# Step 1: Create database and tables
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\01_CreateTables.sql
 
-### ⚠️ Important Notes / Önemli Notlar
-1. **Security**: Replace `[SECURE_PASSWORD_HERE]` with strong passwords before deployment
-2. **Güvenlik**: Dağıtımdan önce `[SECURE_PASSWORD_HERE]` ifadesini güçlü şifrelerle değiştirin
-3. **Compatibility**: Files now work on all operating systems (no Turkish characters in filenames)
-4. **Uyumluluk**: Dosyalar artık tüm işletim sistemlerinde çalışıyor (dosya adlarında Türkçe karakter yok)
-5. **Idempotency**: Scripts can be re-run safely without manual cleanup
-6. **Tekrar Çalıştırılabilirlik**: Betikler manuel temizlik olmadan güvenle yeniden çalıştırılabilir
+# Step 2: Insert sample data
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\02_InsertData.sql
 
----
+# Step 3: Configure security (update passwords first!)
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\03_SecurityPermissions.sql
 
-## Gelişmiş Öğrenci Bilgi Sistemi Veri Tabanı Gereksinimleri
+# Step 4: Create stored procedures
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\04_StoredProcedures.sql
 
-### 1. Proje Kullanıcıları Gereksinimleri ve Yetkileri
+# Step 5: Create triggers
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\05_Triggers.sql
 
-Gelişmiş Öğrenci Bilgi Sistemi’nde üç ana kullanıcı türü bulunur: Öğrenciler, Öğretmenler ve Yöneticiler. Her kullanıcı türü, veritabanındaki verilere farklı düzeylerde erişim ve müdahale yetkisine sahiptir.
+# Step 6: (Optional) Test transaction management
+sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\06_TransactionExample.sql
+```
 
-#### 1.1 Öğrenciler:
-- Sadece kendi bilgilerini görüntüleyebilir.
-- Devamsızlık kayıtlarını ve sınav sonuçlarını görebilir.
-- Ders programına ve sınav takvimine erişebilir.
-- Yalnızca okuma yetkisine sahiptir, veri girişi yapamaz.
+### Configuration
 
-#### 1.2 Öğretmenler:
-- Kendi verdikleri derslerin öğrenci listelerine, devamsızlık kayıtlarına ve sınav sonuçlarına erişebilirler.
-- Dersleri için sınav oluşturabilir ve sınav sonuçlarını güncelleyebilirler.
-- Öğrencilerin ders içindeki performans durumunu görebilirler.
-- Hem okuma hem yazma yetkisine sahiptir.
+⚠️ **Security Configuration Required**
 
-#### 1.3 Yöneticiler:
-- Tüm öğrenci ve öğretmen kayıtlarını yönetme yetkisine sahiptir.
-- Yeni dersler oluşturabilir, ders programlarını ve sınavları düzenleyebilir.
-- Öğrencilerin ve öğretmenlerin bilgilerini güncelleyebilir veya sistemden çıkarabilirler.
-- Veritabanındaki tüm verilere tam erişim (okuma, yazma, güncelleme ve silme) yetkisine sahiptir.
+Before deployment, update passwords in `03_SecurityPermissions.sql`:
+
+```sql
+-- Replace placeholders with strong passwords
+CREATE LOGIN student1 WITH PASSWORD = '[SECURE_PASSWORD_HERE]';
+CREATE LOGIN teacher1 WITH PASSWORD = '[SECURE_PASSWORD_HERE]';
+CREATE LOGIN admin1 WITH PASSWORD = '[SECURE_PASSWORD_HERE]';
+```
+
+**Password Requirements:**
+- Minimum 8 characters
+- Mix of uppercase, lowercase, numbers, and symbols
+- Never use default passwords in production
 
 ---
 
-### 2. Tablolar ve Varlıkların Özellikleri
+## 📁 Project Structure
 
-Her tablo, veritabanındaki bir varlık grubunu temsil eder. Bu varlıkların özellikleri (nitelikler), varlıklar arasındaki ilişkiler ve her ilişkideki sayısal kısıtlamalar aşağıda açıklanmıştır:
-
-#### 2.1 Students (Öğrenciler)
-- `id`: Birincil anahtar (PK), benzersiz öğrenci kimliği.
-- `name`: Öğrenci adı, zorunlu bir metin alanı.
-- `surname`: Öğrenci soyadı, zorunlu bir metin alanı.
-- `student_number`: Benzersiz öğrenci numarası, her öğrenci için tekil ve zorunlu.
-- `department_id`: Öğrencinin bağlı olduğu bölüm (FK, Departments tablosuna bağlı).
-- `advisor_id`: Öğrencinin bağlı olduğu danışman.
-
-**İlişkiler:** 
-- Bir öğrenci yalnızca bir bölüme (Departments tablosundaki bir satıra) aittir.
-- Bir öğrenci birden fazla derse katılabilir ve her derste ayrı devamsızlık kaydı bulunabilir.
-
-#### 2.2 Teachers (Öğretmenler)
-- `id`: Birincil anahtar (PK), benzersiz öğretmen kimliği.
-- `name`: Öğretmen adı, zorunlu bir metin alanı.
-- `surname`: Öğretmen soyadı, zorunlu bir metin alanı.
-- `department_id`: Öğretmenin bağlı olduğu bölüm (FK, Departments tablosuna bağlı).
-
-**İlişkiler:**
-- Her öğretmen birden fazla derse girebilir ve birden fazla öğrenciye ders verebilir.
-- Her öğretmen yalnızca bir bölüme bağlı olabilir.
-
-#### 2.3 Courses (Dersler)
-- `id`: Birincil anahtar (PK), benzersiz ders kimliği.
-- `course_name`: Dersin adı, örneğin "Matematik", "Fizik" gibi.
-- `teacher_id`: Dersi veren öğretmen (FK, Teachers tablosuna bağlı).
-- `department_id`: Dersi veren bölüm (FK, Departments tablosuna bağlı).
-
-**İlişkiler:**
-- Her ders bir öğretmen tarafından verilir, ancak birden fazla öğrenci katılabilir.
-- Bir ders, birden fazla bölüme atanabilir.
-
-#### 2.4 AttendanceRecords (Devamsızlık Kayıtları)
-- `id`: Birincil anahtar (PK), benzersiz devamsızlık kaydı kimliği.
-- `student_id`: Devamsızlık yapan öğrenci (FK, Students tablosuna bağlı).
-- `course_id`: Devamsızlık yapılan ders (FK, Courses tablosuna bağlı).
-- `date`: Devamsızlık yapılan tarih.
-- `status`: Devamsızlık durumu ("Present", "Absent", "Late", "Excused" gibi değerler alabilir).
-
-**İlişkiler:**
-- Her öğrenci, her ders için birden fazla devamsızlık kaydına sahip olabilir.
-- Bir öğrenci birçok derste devamsızlık yapabilir ve her ders için devamsızlık kaydı bulunabilir.
-
-#### 2.5 Departments (Bölümler)
-- `id`: Birincil anahtar (PK), benzersiz bölüm kimliği.
-- `department_name`: Bölüm adı, örneğin "Matematik", "Fizik" gibi.
-
-**İlişkiler:**
-- Her bölümde birden fazla öğretmen ve birden fazla ders bulunabilir.
-
-#### 2.6 Exams (Sınavlar)
-- `id`: Birincil anahtar (PK), benzersiz sınav kimliği.
-- `course_id`: Sınavın yapıldığı ders (FK, Courses tablosuna bağlı).
-- `exam_date`: Sınav tarihi.
-- `exam_type`: Sınav türü, örneğin "Midterm", "Final", "Quiz".
-
-**İlişkiler:**
-- Her ders için birden fazla sınav yapılabilir.
-- Her sınav yalnızca bir derse bağlıdır.
-
-#### 2.7 Grades (Sınav Notları)
-- `id`: Birincil anahtar (PK), benzersiz sınav sonucu kimliği.
-- `student_id`: Sınava giren öğrenci (FK, Students tablosuna bağlı).
-- `exam_id`: Sınav kimliği (FK, Exams tablosuna bağlı).
-- `score`: Sınav puanı (numerik değer).
-
-**İlişkiler:**
-- Her öğrenci, her sınavdan bir sonuç alabilir.
-- Bir sınav, birden fazla öğrenci tarafından alınabilir ve her öğrenci bir sınavdan sadece bir sonuç alır.
-
-#### 2.8 Timetable (Ders Programı)
-- `id`: Birincil anahtar (PK), benzersiz ders programı kimliği.
-- `course_id`: Programda yer alan ders (FK, Courses tablosuna bağlı).
-- `day`: Gün, örneğin "Pazartesi".
-- `start_time`: Dersin başlangıç saati.
-- `end_time`: Dersin bitiş saati.
-- `class`: Dersin yapıldığı sınıf.
-
-**İlişkiler:**
-- Ders programı, birden fazla ders için düzenlenebilir.
-- Her ders programı kaydı belirli bir gün ve saatte yapılır.
+```
+advanced-student-management-system/
+│
+├── obs_sql/                          # SQL Scripts
+│   ├── 01_CreateTables.sql          # Database schema creation
+│   ├── 02_InsertData.sql            # Sample data insertion (wrapped in transaction)
+│   ├── 03_SecurityPermissions.sql   # RBAC setup (roles, logins, permissions)
+│   ├── 04_StoredProcedures.sql      # RegisterStudent procedure with validation
+│   ├── 05_Triggers.sql              # Audit trail trigger (student deletion)
+│   └── 06_TransactionExample.sql    # Transaction management demonstration
+│
+├── run_sql_scripts.ps1              # Automated setup script
+├── database_operations.ps1          # Database utility functions
+├── .gitignore                       # Git ignore patterns
+├── README.md                        # This file
+└──LICENSE                          # MIT License
+```
 
 ---
 
-### 3. İlişkiler ve Sayısal Kısıtlamalar
+## 💻 Usage Examples
 
-- **Students → Departments**: Her öğrenci yalnızca bir bölüme atanır (1:1).
-- **Students → AttendanceRecords**: Her öğrenci, her ders için devamsızlık kaydı tutabilir (N:M).
-- **Courses → Teachers**: Her ders birden fazla öğretmen tarafından verilebilir, her öğretmen birden fazla derse sahip olabilir (N:M).
-- **Courses → Departments**: Her ders yalnızca bir bölüme atanır, ancak bir bölümde birden fazla ders olabilir (1:N).
-- **Exams → Courses**: Her ders için birden fazla sınav yapılabilir, ancak her sınav yalnızca bir derse bağlıdır (1:N).
-- **ExamResults → Students → Exams**: Her öğrenci her sınavdan bir sonuç alabilir, bu nedenle öğrenciler ve sınavlar arasındaki ilişki N:N'dir.
+### Register a New Student
 
-## E-R DİYAGRAMI
+```sql
+DECLARE @ReturnCode INT;
 
-![OBS](https://github.com/user-attachments/assets/c02193dd-483a-4295-9d6c-e7c1b7227248)
+EXEC @ReturnCode = RegisterStudent 
+    @StudentNo = '220260999',
+    @Name = 'John',
+    @Surname = 'Smith',
+    @DepartmentID = 1,
+    @AdvisorID = 5;
 
+-- Return Codes:
+-- 0 = Success
+-- -1 = Invalid department
+-- -2 = Invalid advisor
+-- -3 = Duplicate student number
+-- -99 = Unexpected error
+```
+
+### Query Student Information
+
+```sql
+-- Get student with their department and advisor
+SELECT 
+    s.StudentNo,
+    s.Name + ' ' + s.Surname AS FullName,
+    d.DepartmentName,
+    t.Name + ' ' + t.Surname AS AdvisorName
+FROM Students s
+INNER JOIN Departments d ON s.DepartmentID = d.ID
+INNER JOIN Teachers t ON s.AdvisorID = t.ID
+WHERE s.StudentNo = '220260001';
+```
+
+### Check Attendance Rate
+
+```sql
+-- Calculate student attendance percentage
+SELECT 
+    s.Name + ' ' + s.Surname AS Student,
+    c.CourseName,
+    COUNT(*) AS TotalClasses,
+    SUM(CASE WHEN a.Status = 'Present' THEN 1 ELSE 0 END) AS PresentCount,
+    CAST(SUM(CASE WHEN a.Status = 'Present' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DECIMAL(5,2)) AS AttendanceRate
+FROM Attendances a
+INNER JOIN Students s ON a.StudentID = s.ID
+INNER JOIN Courses c ON a.CourseID = c.ID
+WHERE s.StudentNo = '220260001'
+GROUP BY s.Name, s.Surname, c.CourseName;
+```
+
+---
+
+## 📊 Sample Data
+
+The database includes realistic sample data for testing and demonstration:
+
+| Entity | Count | Description |
+|--------|-------|-------------|
+| **Students** | 400 | Distributed across 30 departments |
+| **Teachers** | 210 | With department assignments |
+| **Courses** | 239 | Various credit hours and course types |
+| **Departments** | 30 | Academic departments |
+| **Exams** | 51 | Midterms, finals, quizzes |
+| **Grades** | 51 | Sample exam results |
+| **Attendances** | 600+ | Various attendance statuses |
+
+---
+
+## 🔒 Security Model
+
+### Role Hierarchy
+
+```
+AdminRole
+    ├── Full CRUD access on all tables
+    ├── User management capabilities
+    └── System configuration
+
+TeacherRole
+    ├── READ: All student/course data
+    ├── WRITE: Grades, Exams, Attendances
+    └── UPDATE: Own course information
+
+StudentRole
+    ├── READ: Own records only
+    │   ├── Grades
+    │   ├── Attendances
+    │   ├── Timetables
+    │   └── Course information
+    └── No WRITE permissions
+```
+
+### Audit Logging
+
+All critical operations are automatically logged:
+
+- **Student Deletion**: `trg_Student_Delete` trigger logs to `Logs` table
+- **Timestamp**: Automatic GETDATE() on all log entries
+- **User Tracking**: UserType, UserID, Action, Description fields
+
+---
+
+## 🛠️ Technical Specifications
+
+### Technologies
+
+- **Database**: Microsoft SQL Server 2019+
+- **Scripting**: PowerShell 5.1+
+- **Authentication**: Windows Authentication / SQL Server Authentication
+- **Character Encoding**: UTF-8 with bilingual support
+
+### Design Patterns
+
+- **Idempotency**: All scripts use `DROP IF EXISTS` and `CREATE OR ALTER`
+- **Transaction Management**: ACID compliance with TRY/CATCH blocks
+- **Error Handling**: Comprehensive error logging with RAISERROR/THROW
+- **Naming Conventions**: PascalCase for all database objects
+- **Schema Qualification**: Explicit `dbo.` prefixes throughout
+
+### Performance Considerations
+
+- **Indexes**: Primary keys on all ID columns (auto-indexed)
+- **Foreign Keys**: Named constraints for query optimization
+- **Batch Processing**: GO statements for proper batch separation
+- **Connection Pooling**: Supports connection reuse in PowerShell scripts
+
+---
+
+## 📚 Documentation
+
+### File Documentation
+
+Each SQL file includes comprehensive bilingual documentation:
+
+```sql
+/*******************************************************************************
+ * File: 01_CreateTables.sql
+ * Purpose: Creates all database tables with proper schema
+ * 
+ * Author: Yunus Emre Gümüş
+ * Date Created: February 16, 2026
+ * 
+ * Description:
+ *   Defines the complete database schema with 17 tables...
+ * 
+ * Açıklama:
+ *   17 tablo ile tam veritabanı şemasını tanımlar...
+ ******************************************************************************/
+```
+
+### Inline Comments
+
+All code includes bilingual inline comments:
+
+```sql
+-- Create database users from logins / Oturum açma bilgilerinden veritabanı kullanıcıları oluştur
+CREATE USER student1 FOR LOGIN student1;
+```
+
+---
+
+## 🧪 Testing
+
+### Automated Tests
+
+Run the test suite:
+
+```powershell
+# Test all components
+.\run_sql_scripts.ps1
+
+# Verify installation
+sqlcmd -S localhost\SQLEXPRESS -E -Q "USE StudentManagementDB; SELECT COUNT(*) AS Tables FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE';"
+```
+
+### Manual Testing
+
+Test stored procedures:
+
+```sql
+-- Test successful registration
+EXEC RegisterStudent '999999999', 'Test', 'User', 1, 1;
+
+-- Test duplicate prevention
+EXEC RegisterStudent '999999999', 'Test', 'User', 1, 1; -- Returns -3
+
+-- Test invalid department
+EXEC RegisterStudent '999999998', 'Test', 'User', 9999, 1; -- Returns -1
+```
+
+Test triggers:
+
+```sql
+-- Create a test student
+INSERT INTO Students (StudentNo, Name, Surname, DepartmentID, AdvisorID, RoleID)
+VALUES ('888888888', 'Trigger', 'Test', 1, 1, 1);
+
+-- Delete and check audit log
+DELETE FROM Students WHERE StudentNo = '888888888';
+
+-- Verify audit trail
+SELECT * FROM Logs WHERE Description LIKE '%Trigger Test%';
+```
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! This project demonstrates professional SQL development practices and welcomes improvements.
+
+### How to Contribute
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Development Guidelines
+
+- Follow PascalCase naming conventions
+- Add bilingual comments (English/Turkish) for all major sections
+- Ensure idempotency in all scripts
+- Include comprehensive error handling
+- Update documentation for new features
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Yunus Emre Gümüş**
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+
+---
+
+## 🌟 Acknowledgments
+
+- Built with enterprise-grade SQL Server best practices
+- Inspired by real-world student information systems
+- Implements patterns from Microsoft SQL Server documentation
+
+---
+
+## 📞 Support
+
+If you have any questions or run into issues, please:
+
+1. Check the [documentation](#-documentation)
+2. Review the [Quick Start](#-quick-start) guide
+3. Open an [issue](https://github.com/yourusername/advanced-student-management-system/issues)
+
+---
+
+<div align="center">
+
+**⭐ Star this repository if you find it helpful!**
+
+Made with ❤️ using SQL Server and PowerShell
+
+</div>
