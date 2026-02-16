@@ -425,8 +425,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Yunus Emre Gümüş**
 
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- GitHub: [@emregumusai](https://github.com/emregumusai)
+- LinkedIn: [Yunus Emre Gümüş](https://linkedin.com/in/yourprofile)
 
 ---
 
@@ -444,7 +444,7 @@ If you have any questions or run into issues, please:
 
 1. Check the [documentation](#-documentation)
 2. Review the [Quick Start](#-quick-start) guide
-3. Open an [issue](https://github.com/yourusername/advanced-student-management-system/issues)
+3. Open an [issue](https://github.com/emregumusai/advanced-student-management-system/issues)
 
 ---
 
