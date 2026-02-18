@@ -1,4 +1,8 @@
-﻿# 🎓 Advanced Student Management System
+﻿<div align="center">
+
+# Advanced Student Management System
+
+</div>
 
 <div align="center">
 
@@ -20,13 +24,13 @@ A comprehensive Student Information System (SIS) built with SQL Server, featurin
 
 ### 🎯 Key Highlights
 
-- **🔐 Role-Based Access Control (RBAC)** - Three-tier security model (Student, Teacher, Admin)
-- **🌍 Bilingual Documentation** - Complete English/Turkish inline comments
-- **💾 Transaction Safety** - ACID-compliant with comprehensive error handling
-- **🔄 Idempotent Scripts** - Safe re-execution without data corruption
-- **📊 Rich Sample Data** - 400+ students, 210+ teachers, realistic relationships
-- **🛡️ Security Best Practices** - Password policies, parameterized queries, audit logging
-- **⚡ Automated Deployment** - One-command PowerShell setup scripts
+- **Role-Based Access Control (RBAC)** - Three-tier security model (Student, Teacher, Admin)
+- **Bilingual Documentation** - Complete English/Turkish inline comments
+- **Transaction Safety** - ACID-compliant with comprehensive error handling
+- **Idempotent Scripts** - Safe re-execution without data corruption
+- **Rich Sample Data** - 400+ students, 210+ teachers, realistic relationships
+- **Security Best Practices** - Password policies, parameterized queries, audit logging
+- **Automated Deployment** - One-command PowerShell setup scripts
 
 ---
 
@@ -61,24 +65,24 @@ A comprehensive Student Information System (SIS) built with SQL Server, featurin
 
 **17 Core Tables** organized into logical groups:
 
-#### 📚 Core Entities
+#### Core Entities
 - **Students** - Student records with departmental affiliations
 - **Teachers** - Faculty records with department assignments
 - **Departments** - Academic department hierarchy
 - **Courses** - Course catalog with credits and prerequisites
 
-#### 🔗 Relationship Tables
+#### Relationship Tables
 - **StudentCourses** - Many-to-many student enrollment
 - **TeacherCourses** - Course-instructor assignments
 - **DepartmentCourses** - Department-course relationships
 
-#### 📊 Activity Tables
+#### Activity Tables
 - **Attendances** - Daily attendance records
 - **Exams** - Examination schedules and types
 - **Grades** - Student exam results
 - **Timetables** - Weekly course schedules
 
-#### 🔐 System Tables
+#### System Tables
 - **Roles** - User role definitions
 - **RolePermissions** - Permission mappings
 - **Admins** - System administrator accounts
@@ -143,7 +147,7 @@ sqlcmd -S localhost\SQLEXPRESS -E -i obs_sql\06_TransactionExample.sql
 
 ### Configuration
 
-⚠️ **Security Configuration Required**
+**Security Configuration Required**
 
 Before deployment, update passwords in `03_SecurityPermissions.sql`:
 
@@ -426,7 +430,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Yunus Emre Gümüş**
 
 - GitHub: [@emregumusai](https://github.com/emregumusai)
-- LinkedIn: [Yunus Emre Gümüş](https://linkedin.com/in/yourprofile)
+- LinkedIn: [emregumusai](https://linkedin.com/in/emregumusai)
 
 ---
 
@@ -452,6 +456,6 @@ If you have any questions or run into issues, please:
 
 **⭐ Star this repository if you find it helpful!**
 
-Made with ❤️ using SQL Server and PowerShell
+Made with using SQL Server and PowerShell
 
 </div>
