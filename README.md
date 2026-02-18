@@ -456,6 +456,6 @@ If you have any questions or run into issues, please:
 
 **⭐ Star this repository if you find it helpful!**
 
-Made with using SQL Server and PowerShell
+Made with ❤️ using SQL Server and PowerShell
 
 </div>
